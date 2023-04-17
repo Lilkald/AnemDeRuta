@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&family=Julius+Sans+One&display=swap');
+/*
+font-family: 'Jaldi', sans-serif;
+font-family: 'Julius Sans One', sans-serif;
+*/
+
+html{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #FAFAFA;
+}
+body, html{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Jaldi', sans-serif;
+    
+}
+
+/*Basics*/
+p{
+    color: black;
+}
+
+/*-----------------------Header---------------------*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #0C80FE;
+}
+.logo{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo img {
+  max-height: 100px;
+  margin-left: 50px;
+}
+.logo p{
+  width: 281px;
+  height: 21px;
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 1.5em;
+}
+.logo a{
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  margin-right: 50px;
+}
+
+nav li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.4em;
+  transition: all 0.2s ease;
+  padding: 0px 10px;
+}
+
+nav a:hover {
+  color: #AFE3DE;
+}
+
+
+
+/*Mapa*/
+.containerMapa{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 150px 0px 250px 0px;
+  background-image: url("../images/fondoMapa.png");
+  background-size: cover;
+  background-repeat: none;
+}
+
+.mapa{
+  width: 90%;
+}
+#map {
+  height: 100%;
+}
+
+
+
+/*Descarga la app*/
+.descargaApp{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0px 50px 0px;
+
+}
+.container1{
+  width: 80%;
+  height: 450px;
+  background-image: url(../images/app.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 70px;
+}
+.descargaApp p{
+  width: 400px;
+  margin-left: 40px;
+  letter-spacing: 0.1em;
+}
+.enlaceApp{
+  padding: 10px 40px;
+  background-color: #426DA1;
+  margin-left: 40px;
+  border-radius: 10px;
+  transition: 0.5s all;
+}
+.enlaceApp{
+  text-decoration: none;
+  color: white;
+}
+.enlaceApp:hover{
+  color: black;
+  background-color: #5995DE;
+}
+
+
+/*Consulta las mejores rutas*/
+.consultaMejores{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/muntanyista.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+}
+
+.container2{
+  width:80%;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.box{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: 5px 5px 20px black;
+}
+.box h3{
+  text-align: center;
+}
+.box p{
+  text-align: center;
+}
+.box img{
+  width: 100%;
+}
+
+/*Registrate*/
+.registrate{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container3{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avion{
+  background-image: url(../images/avio1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 65%;
+  height: 360px;
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.avion h3{
+  margin-left: 40px;
+}
+
+.avioneta{
+  background-image: url(../images/avio2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 35%;
+  height: 260px;
+  margin: 50px;
+}
+.avioneta h3{
+  margin-top: 60px;
+  text-align: right;
+  margin-right: 30px;
+
+}
+.avioneta p{
+  text-align: center;
+  margin: 60px 20px 20px 20px;
+  line-height: 30px;
+}
+
+/*Footer*/
+footer{
+  width: 100%;
+  display: flex;
+  background-color: #0C80FE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+footer a{
+  color: white;
+}
+
+.footer{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  
+}
+
+.politica{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.politica a{
+  padding: 5px;
+}
+
+.allright{
+  text-align: center;
+}
+.logo i{
+  font-size: 2.3em;
+  margin: 5px 10px 5px 0px;
+  color: white;
+  transition: 0.5s all;
+}
+.logo i:hover{
+  color: white;
+}
