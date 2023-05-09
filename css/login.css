@@ -43,18 +43,19 @@ input {
 	box-sizing: border-box;
 }
 
-button {
+.button {
 	background-color: #4CAF50;
 	color: white;
 	padding: 14px 20px;
 	margin: 8px 0;
 	border: none;
 	border-radius: 4px;
+	width: 150px;
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
 }
 
-button:hover {
+.button:hover {
 	background-color: #3e8e41;
 }
 
@@ -65,3 +66,58 @@ a {
 a:hover {
 	color: #333;
 }
+
+/*----------------------------------------Header----------------------------------------*/
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+	background-color: #0C80FE;
+  }
+  .logo{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+  }
+  .logo img {
+	max-height: 100px;
+	margin-left: 50px;
+  }
+  .logo p{
+	width: 281px;
+	height: 21px;
+	margin-left: 20px;
+	color: white;
+	text-decoration: none;
+	font-family: 'Julius Sans One', sans-serif;
+	font-size: 1.5em;
+  }
+  .logo a{
+	text-decoration: none;
+  }
+  
+  nav ul {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin: 0;
+	margin-right: 50px;
+  }
+  
+  nav li {
+	list-style: none;
+	margin-left: 20px;
+  }
+  
+  nav a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.4em;
+	transition: all 0.2s ease;
+	padding: 0px 10px;
+  }
+  
+  nav a:hover {
+	color: #AFE3DE;
+  }
