@@ -52,18 +52,18 @@
     <div id="mapid" class="col" style="height: 500px; border: 5px solid black;"></div>
     <div class="su"></div>
     <div>
-      <form onsubmit="return false;">
-      <label for="vehicle-select">Seleccione un vehículo:</label>
+      <form class="filtres" onsubmit="return false;">
+      <label for="vehicle-select">Filtrar per tipus de ruta:</label><br>
       <select id="vehicles">
-        <option value="coche">Coche</option>
+        <option value="coche">Cotxe</option>
         <option value="moto">Moto</option>
         <option value="bici">Bicicleta</option>
-        <option value="caminar">Caminando</option>
-      </select>
-      <input  type="submit" class="filtrar" id="filtrar" value="filtrar">
+        <option value="caminar">Caminant</option>
+      </select><br>
+      <input type="submit" class="filtrar" id="filtrar" value="filtrar">
     </form>
-    </div>
-    <input type="submit" class="tornar" id="tornar" value="tornar"></div>
+    </div><br>
+    <input type="submit" class="tornar" id="tornar" value="Tornar"></div>
     <br>
     <footer>
       <div class="footer">
@@ -219,7 +219,7 @@ $('#filtrar').on('click', function() {
         data.forEach(function(coordenada) {
           var inicioLatlng = L.latLng(coordenada.latitud_inicial, coordenada.longitud_inicial);
           var finLatlng = L.latLng(coordenada.latitud_final, coordenada.longitud_final);
-          var rutaLayer = L.polyline([inicioLatlng, finLatlng], { color: 'green' }).addTo(map);
+          var rutaLayer = L.polyline([inicioLatlng, finLatlng], { color: 'blue' }).addTo(map);
 
           var nombreRuta = coordenada.nombre;
           var tipus = coordenada.tipus;
@@ -242,7 +242,7 @@ $('#filtrar').on('click', function() {
         data.forEach(function(coordenada) {
           var inicioLatlng = L.latLng(coordenada.latitud_inicial, coordenada.longitud_inicial);
           var finLatlng = L.latLng(coordenada.latitud_final, coordenada.longitud_final);
-          var rutaLayer = L.polyline([inicioLatlng, finLatlng], { color: 'green' }).addTo(map);
+          var rutaLayer = L.polyline([inicioLatlng, finLatlng], { color: 'red' }).addTo(map);
           var nombreRuta = coordenada.nombre;
           var tipus = coordenada.tipus;
           var marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse2.mm.bing.net/th?id=OIP.GzB7SiVMJtmnqhwAujNJzgHaF_&pid=Api&P=0&h=180" width='50px'>`);
@@ -264,7 +264,7 @@ $('#filtrar').on('click', function() {
         data.forEach(function(coordenada) {
           var inicioLatlng = L.latLng(coordenada.latitud_inicial, coordenada.longitud_inicial);
           var finLatlng = L.latLng(coordenada.latitud_final, coordenada.longitud_final);
-          var rutaLayer = L.polyline([inicioLatlng, finLatlng], { color: 'green' }).addTo(map);
+          var rutaLayer = L.polyline([inicioLatlng, finLatlng], { color: 'purple' }).addTo(map);
 
           var nombreRuta = coordenada.nombre;
           var tipus = coordenada.tipus;
@@ -288,7 +288,7 @@ $('#filtrar').on('click', function() {
         data.forEach(function(coordenada) {
           var inicioLatlng = L.latLng(coordenada.latitud_inicial, coordenada.longitud_inicial);
           var finLatlng = L.latLng(coordenada.latitud_final, coordenada.longitud_final);
-          var rutaLayer = L.polyline([inicioLatlng, finLatlng], { color: 'green' }).addTo(map);
+          var rutaLayer = L.polyline([inicioLatlng, finLatlng], { color: 'yellow' }).addTo(map);
 
           var nombreRuta = coordenada.nombre;
           var tipus = coordenada.tipus;

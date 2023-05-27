@@ -7,18 +7,17 @@ if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
 
-// Realiza una consulta para obtener las coordenadas
+
 $sql = "SELECT * FROM rutas WHERE tipus LIKE 'bici'";
 $result = $conn->query($sql);
 
-// Verifica si ocurrió un error en la ejecución de la consulta
+
 if ($result === false) {
     die("Error en la consulta: " . $conn->error);
 }
 
-// Verifica si se obtuvieron resultados
 if ($result->num_rows > 0) {
-    // Recorre los resultados y almacena las coordenadas en un arreglo
+
     $coordenadas = array();
     while ($row = $result->fetch_assoc()) {
         $coordenadas[] = array(
