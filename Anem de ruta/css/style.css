@@ -394,6 +394,12 @@ nav a:hover {
   background-color: #426DA1 !important;
   color: white;
 }
+
+.botoEditar input:hover{
+  background-color: grey;
+  color: white;
+}
+
 .buscaUsuaris{
   color: black;
   font-size: 1.0em;
