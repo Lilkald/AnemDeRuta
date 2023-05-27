@@ -1,3 +1,14 @@
+<?php
+include("conexio/conexio.php");
+    session_start();
+	if (!isset($_SESSION['username'])) {
+        // No hay sesión activa, redirigir a la página de inicio de sesión
+        header("Location: login.php");
+        exit();
+    }
+
+    $usuari = $_SESSION['id'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -126,11 +137,18 @@
           <option value="caminar">Caminar</option>
         </select>
         <br><br>
-        <input class="tornar" type="submit" id="guardar-ruta" name="guardar-ruta">
+
         <br>
   </form>
   <br>
+  <div class="pasos" style="text-align: center;">
+    <h2>Pas 2:</h2><br>
+    <p>Selecciona ara el recorregut de la teva nova ruta!</p>
+  </div>
+  
   <div id="mapid" style="height: 600px; width: 1300px; margin: 0 auto; border: 5px solid black;"></div>
+  <br>
+  <input class="tornar" type="submit" id="guardar-ruta" name="guardar-ruta">
   <br>
   <footer>
     <div class="footer">
@@ -308,6 +326,8 @@ function obtenerDificultadSeleccionada() {
 
     return valorSeleccionado;
   }
+  var usuari = "<?php echo $usuari; ?>";
+    console.log(usuari);
 
 $('#guardar-ruta').click(function() {
     var latitud_inicial = localStorage.getItem('latitud_inicial');
@@ -318,6 +338,7 @@ $('#guardar-ruta').click(function() {
     var descripcio = $('#descripcio').val();
     const dificultad = obtenerDificultadSeleccionada();
     var tipus = $('#tipo_ruta').val();
+    var user_id = "<?php echo $usuari; ?>";
     console.log(tipus);
     console.log(dificultad);
         var dades = {
@@ -329,7 +350,9 @@ $('#guardar-ruta').click(function() {
             longitud_inicial : longitud_inicial,
             longitud_final : longitud_final,
             tipus: tipus,
+            user_id: user_id,
         };
+
     
     $.ajax({
         url: 'guarda_rutes.php',

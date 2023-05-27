@@ -1,3 +1,14 @@
+<?php
+include("conexio/conexio.php");
+    session_start();
+	if (!isset($_SESSION['username'])) {
+        // No hay sesión activa, redirigir a la página de inicio de sesión
+        header("Location: login.php");
+        exit();
+    }
+
+    $usuari = $_SESSION['username'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -106,13 +117,6 @@ const geocoderControl = L.Control.geocoder({
   defaultMarkGeocode: false
 });
 
-var myIcon_bicicleta = L.icon({
-      iconUrl: 'https://tse1.mm.bing.net/th?id=OIP.xVFm-h6fmqdlFR7YNBp29QHaF7&pid=Api&P=0&h=180', // Cambia "ruta-a-tu-icono.png" por la ruta real de tu icono
-      iconSize: [32, 32], // Tamaño del icono en píxeles
-      iconAnchor: [16, 16], // Punto de anclaje del icono en relación con su posición
-      popupAnchor: [0, -16] // Punto de anclaje del popup en relación con su posición
-    });
-
 
 function onGeolocationSuccess(position) {
       var lat = position.coords.latitude;
@@ -144,8 +148,9 @@ function onGeolocationError(error) {
 // Agrega el clúster de marcadores al mapa
 
 // Realizar la solicitud AJAX para obtener las coordenadas
+var usuari = "<?php echo $usuari; ?>";
+    console.log(usuari);
 $.ajax({
- 
 
  url: 'localitzacions.php',
  type: 'GET',
