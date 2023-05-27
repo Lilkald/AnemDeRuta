@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&family=Julius+Sans+One&display=swap');
+/*
+font-family: 'Jaldi', sans-serif;
+font-family: 'Julius Sans One', sans-serif;
+*/
+
+html{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #FAFAFA;
+}
+body, html{
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Jaldi', sans-serif;
+}
+
+/*Basics*/
+p{
+    color: black;
+    font-family: 'Jaldi', sans-serif;
+}
+
+body{
+    display: flex;
+}
+.menu{
+    width: 23%;
+    height: 100%;
+    background-color: #0C80FE;
+    box-shadow: 2px 0px 30px black;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.logo img {
+    max-height: 100px;
+}
+.logo p{
+    color: white;
+    font-size: 2.3em;
+    font-family: 'Julius Sans One', sans-serif;
+    font-style: none;
+    text-decoration: none;
+}
+.logo a{
+    text-decoration: none;
+}
+
+/*Menú*/
+li{
+    list-style: none;
+}
+ul a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: all 0.5s;
+}
+ul a:hover{
+    color: black;
+}
+
+/*Caixes d'admin*/
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    height:100%;
+}
+
+.box{
+    width: 100%;
+    height: 70%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box h2{
+    font-size: 2em;
+}
+.box p{
+    font-size: 1.5em;
+}
+.box a{
+    color: black;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s all;
+}
+.box a:hover{
+    filter: drop-shadow(5px 5px 20px black);
+}
+
+.usuaris{
+    background-image: url(../images/usuaris.png);
+    background-size: contain;
+    background-repeat: none repeat;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 0px 20px black;
+}
+.mono{
+    background-image: url(../images/monitoritzacio.png);
+    background-size: cover;
+    background-repeat: none repeat;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 0px 20px black;
+}
+.contingut{
+    background-image: url(../images/contingut.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 0px 20px black;
+}
+.fondo{
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+
+}
+
+
+/*Crear usuari*/
+.containerUsuari{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80%;
+    height:100%;
+}
+.crearUsuari{
+    margin: 100px;
+    width: 40%;
+}
+.taulaUsuaris{
+    margin: 100px 50px;
+    width: 60%;
+}
+table{
+    margin-top: 20px;
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td{
+	padding: 10px 20px;
+}
+
+thead{
+	background-color: #246355;
+	border-bottom: solid 5px #0F362D;
+	color: white;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: #369681;
+	color: white;
+}
+.taula{
+    width: 100%;
+}
+
+.monitor{
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+}

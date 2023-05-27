@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&family=Julius+Sans+One&display=swap');
+/*
+font-family: 'Jaldi', sans-serif;
+font-family: 'Julius Sans One', sans-serif;
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url('../images/llac.jpg');
+	background-size: cover;
+	background-position: center;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-container {
+	margin: 10% auto;
+	width: 400px;
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 50px;
+	border-radius: 20px;
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+	text-align: center;
+}
+
+.login-container h1 {
+	margin-bottom: 40px;
+	color: #333;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+label {
+	display: block;
+	margin-bottom: 10px;
+	color: #333;
+}
+
+input {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.button {
+	background-color: #0C80FE;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	width: 150px;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+	background-color: #3e8e41;
+}
+
+a {
+	color: #666;
+}
+
+a:hover {
+	color: #333;
+}
+.logo p {
+    width: 281px;
+    height: 21px;
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.5em;
+}
+
+/*----------------------------------------Header----------------------------------------*/
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+	background-color: rgb(12, 128, 254);
+  }
+  .logo{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+  }
+  .logo img {
+	max-height: 100px;
+	margin-left: 50px;
+  }
+  .logo p{
+	width: 281px;
+	height: 21px;
+	margin-left: 20px;
+	color: white;
+	text-decoration: none;
+	font-family: 'Julius Sans One', sans-serif;
+	font-size: 1.5em;
+  }
+  .logo a{
+	text-decoration: none;
+  }
+  
+  nav ul {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin: 0;
+	margin-right: 50px;
+  }
+  
+  nav li {
+	list-style: none;
+	margin-left: 20px;
+  }
+  
+  nav a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.2em;
+	transition: all 0.2s ease;
+	padding: 0px 10px;
+  }
+  
+  nav a:hover {
+	color: #AFE3DE;
+  }

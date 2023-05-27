@@ -1,0 +1,903 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&family=Julius+Sans+One&display=swap');
+/*
+font-family: 'Jaldi', sans-serif;
+font-family: 'Julius Sans One', sans-serif;
+*/
+
+html{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #FAFAFA;
+}
+body, html{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Jaldi', sans-serif;
+    
+}
+
+/*Basics*/
+p{
+    color: black;
+}
+
+/*----------------------------------------Header----------------------------------------*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: rgb(12, 128, 254);
+}
+.logo{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo img {
+  max-height: 100px;
+  margin-left: 50px;
+}
+.logo p{
+  width: 281px;
+  height: 21px;
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 1.5em;
+}
+.logo a{
+  text-decoration: none;
+}
+nav{
+  display: flex;
+  justify-content: flex-end;
+}
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  margin-right: 50px;
+}
+.buscadorUL{
+  padding-left: 0px;
+}
+nav li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.4em;
+  transition: all 0.2s ease;
+  padding: 0px 10px;
+}
+
+nav a:hover {
+  color: #AFE3DE;
+}
+
+.buscador {
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+  margin-right: 10px;
+  font-size: 14px;
+  width: 200px;
+}
+.desplegable {
+  position: absolute;
+  z-index: 1;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  padding: 0;
+  margin-top: 5px;
+  width: 200px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.desplegable li {
+  width: 85%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.desplegable li:hover {
+  background-color: #e5e5e5;
+}
+
+.desplegable li:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.desplegable li:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+
+/*Mapa*/
+.containerMapa{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0px 250px 0px;
+  background-image: url("../images/fondoMapa.png");
+  background-size: cover;
+  background-repeat: none;
+
+}
+.mapa{
+  width: 90%;
+}
+#map {
+  height: 100%;
+}
+.containerText{
+  width: 80%;
+  justify-content: flex-start;
+}
+.inici{
+  width: 40%;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+}
+.inici ul{
+  padding-left: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.inici li{
+  list-style: none;
+}
+.inici p{
+  margin: 0px 30px;
+}
+.nomEmpresa{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nomEmpresa img{
+  width: 30%;
+  height: 30%;
+}
+.veureRutes{
+  padding: 10px 40px;
+  background-color: rgb(12, 128, 254);
+  border-radius: 10px;
+  transition: 0.5s all;
+  text-align: center;
+}
+.veureRutes:hover{
+  background-color: white;
+  color: black;
+}
+.veureRutes:hover p{
+  transition: 0.5s;
+  color: black;
+}
+.veureRutes p{
+  font-size: 1.2em;
+}
+.veureRutes{
+  text-decoration: none;
+  color: white;
+}
+.veureRutes p{
+  color: white;
+}
+
+
+
+
+/*Descarga la app*/
+.descargaApp{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0px 50px 0px;
+
+}
+.container1{
+  width: 80%;
+  height: 450px;
+  background-image: url(../images/app.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 70px;
+}
+.descargaApp p{
+  width: 400px;
+  margin-left: 40px;
+  letter-spacing: 0.1em;
+}
+.enlaceApp{
+  padding: 10px 40px;
+  background-color: #426DA1;
+  margin-left: 40px;
+  border-radius: 10px;
+  transition: 0.5s all;
+}
+.enlaceApp{
+  text-decoration: none;
+  color: white;
+}
+.enlaceApp:hover{
+  color: black;
+  background-color: #5995DE;
+}
+
+
+/*Consulta las mejores rutas*/
+.consultaMejores{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/muntanyista.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+}
+
+.container2{
+  width:80%;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.box{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: 1px 1px 10px black;
+}
+.box h3{
+  text-align: center;
+}
+.box p{
+  text-align: center;
+}
+.box img{
+  width: 100%;
+  border: 1px solid black;
+}
+
+/*Registrate*/
+.registrate{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container3{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avion{
+  background-image: url(../images/avio1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 65%;
+  height: 360px;
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.avion h3{
+  margin-left: 40px;
+}
+
+.avioneta{
+  background-image: url(../images/avio2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 35%;
+  height: 260px;
+  margin: 50px;
+}
+.avioneta h3{
+  margin-top: 60px;
+  text-align: right;
+  margin-right: 30px;
+
+}
+.avioneta p{
+  text-align: center;
+  margin: 60px 20px 20px 20px;
+  line-height: 30px;
+}
+
+
+/*Usuari*/
+.nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0px;
+  background-image: url(../images/clientBG.jpg);
+  margin-top: 0px;
+}
+.usuaris{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 80%; 
+}
+.usuari{
+  background-color: #ECECEC;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: solid 2px black;
+}
+.usuari p{
+  margin: 10px 0px 20px 25px; 
+}
+.botoSeguir{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.botoSeguir form{
+  width: 40%;
+  display: flex;
+  justify-content: center !important;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.botoSeguir input{
+  width: 100%;
+  font-size: 1.0em;
+  padding: 5px 10px;
+  transition: 0.4s all;
+}
+.botoSeguir input:hover{
+  background-color: grey;
+  color: white;
+}
+.buscaUsuaris{
+  color: black;
+  font-size: 1.0em;
+}
+.buscaUsuaris:hover{
+  color: grey;
+  font-size: 1.0em;
+}
+.seguidors{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.seg p{
+  margin: 0px;
+}
+.seg{
+  width: 33%;
+}
+
+.crearRuta{
+  width: 40%;
+  text-align: center;
+}
+.crearRuta h2{
+  color: white;
+}
+.botoCrearRuta{
+  width: 100%;
+  background-color: #ECECEC;
+  border: solid 2px black;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 10px 0px 40px 0px;
+}
+.botoRuta{
+  margin: 0px;
+  width: 100px;
+}
+.fotoUsuari{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.fotoUsuari img{
+  width: 70px;
+}
+
+/*Mapa usuari*/
+.containerMap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0px 150px 0px;
+  background-size: cover;
+  background-repeat: none;
+}
+
+.rutesApuntado{
+  width: 100%;
+}
+
+
+.rutesApuntado{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.rutesApuntado h3{
+  font-family: 'Julius Sans One', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 26px;
+  text-align: center;
+}
+.rutesApuntat{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: space-around;
+  background-image: url(../images/apuntatBack.png);
+}
+.apuntat{
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0px;
+}
+.caixa{
+  background-color: #D9D9D9;
+  width: 240px;
+  height: 140px;
+  border: solid 2px black;
+}
+
+.botoSaber{
+  margin: 0px;
+  padding: 4px 30px;
+}
+
+
+/*-------------------------------Pàgina Contact Us---------------------------------------*/
+.contacteBody{
+  width: 100%;
+  background-image: url(../images/contact.png);
+  background-repeat: none repeat;
+  background-size: cover;
+}
+.imatgeFons{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.container{
+	width: 90%;
+  height: 100%;
+	display: flex;
+  justify-content: center;
+  margin: 100px 0px;
+  padding: 40px 0px;
+  background-color: rgb(255, 255, 255, 0.9);
+}
+#formulari{
+  width: 50%;
+}
+.formulari{
+	width: 90%;
+	margin: auto;
+	float: center;
+  
+}
+form{
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts{
+	width: 80%;
+	margin: auto;
+	float: center;
+	margin-top: 50px;
+}
+.contacts h1{
+	text-align: left;
+	font-family: 'Jaldi', sans-serif;
+	color: #262626;
+	font-size: 2em;
+}
+
+iframe{
+	float: center;
+	margin: auto;
+}
+
+.contactinfo{
+	width: 30%;
+	margin: auto;
+	float: left;
+  margin-top: 0px;
+}
+.contactinfo h1{
+	text-align: left;
+	font-family: 'Jaldi', sans-serif;
+	color: #262626;
+	font-size: 2em;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+.contactinfo p{
+	font-size: 1em;
+	font-family: 'Jaldi', sans-serif;
+	letter-spacing: 1.2px;
+	text-align: justify;
+	margin: 20px 20px 20px 20px;
+}
+input{
+  width: 50%;
+  font-size: 1.4em;
+    border: none;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+textarea{
+  width: 50%;
+  font-size: 1.4em;
+    border: none;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+label{
+  font-size: 1.4em;
+  font-family: 'Jaldi', sans-serif;
+}
+.contactform{
+	width: 100%;
+	float: left;
+	margin: auto;
+	margin-left: 20px;
+  margin-right: 30px;
+}
+.contactform h1{
+	text-align: left;
+	font-family: 'Jaldi', sans-serif;
+	color: #262626;
+	font-size: 2em;
+	margin-top: 10px;
+  margin-bottom: 30px;
+}
+.button1 {
+  background-color: #0C80FE;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.button1:hover{
+  background-color: white;
+  color: black;
+  border: 1px solid #0C80FE;
+
+}
+
+
+label{
+	font-size: 1.1em;
+	font-family: 'Jaldi', sans-serif;
+	letter-spacing: 1.2px;
+	text-align: justify-all;
+}
+
+textarea{
+  width: 85%;
+  height: 200px;
+	float: left;
+}
+
+.enviar{
+  font-family: 'Jaldi', sans-serif;
+	float: left;
+	margin: auto;
+  font-size: 1.3em;
+  width: 100px;
+	padding: 4px 7px 4px 7px;
+	margin: 30px 10px 10px 0px;
+}
+
+
+
+/*----------------------------------------Footer----------------------------------------*/
+footer{
+  width: 100%;
+  display: flex;
+  background-color: #0C80FE;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+footer a{
+  color: white;
+}
+
+.footer{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+.redes p{
+  color: white;
+}
+
+.politica{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.politica a{
+  padding: 5px;
+}
+
+.allright{
+  text-align: center;
+}
+.logo i{
+  font-size: 2.3em;
+  margin: 5px 10px 5px 0px;
+  color: white;
+  transition: 0.5s all;
+}
+.allright p{
+  color: white;
+}
+.logo i:hover{
+  color: black;
+}
+
+@media only screen and (max-width: 1040px) {
+  header {
+    flex-direction: column;
+  }
+  nav{
+    margin-top: 20px;
+  }
+
+  .container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .contactinfo{
+    width: 80%;
+  }
+  #formulari{
+    width: 80%;
+  }
+  .contactform h1{
+    margin-left: 0px;
+  }
+  .containerText{
+    display: flex;
+    justify-content: center;
+  }
+  .inici{
+    width: 80%;
+  }
+  .nomEmpresa{
+    width: 100%;
+  }
+  .nomEmpresa img{
+    width: 20%;
+    height: 70%;
+  }
+  
+}
+@media only screen and (max-width: 880px) {
+  .container2{
+    flex-direction: column;
+    align-items: center;
+  }
+  .box{
+    width: 50%;
+  }
+  .usuari{
+    margin: 0px;
+  }
+  .container1{
+    background-size: cover;
+  }
+  .container3{
+    flex-direction: column;
+    
+  }
+  .registrate{
+    margin-bottom: 50px;
+  }
+  .avion{
+    width: 90%;
+    height: 180px;
+  }
+  .avioneta{
+    width: 90%;
+    height: 180px;
+    
+  }
+  .usuaris{
+    flex-direction: column;
+    align-items: center;
+  }
+  .usuari{
+    width: 90%;
+  }
+  .rutesApuntat{
+    width: 90%;
+  }
+  .formulariOrg{
+    display: flex;
+    flex-direction: column;
+  }
+  textarea{
+    margin-left: 0px;
+  }
+  .enviar{
+    margin: 30px 10px 10px 0px;
+    width: 100px;
+  }
+  label{
+    margin-left: 0px;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+  }
+  label{
+    text-align: left;
+  }
+  input{
+    width: 80%;
+  }
+  nav{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .buscadorUL{
+    padding: 10px 0px;
+    margin: 0px;
+  }
+}
+@media only screen and (max-width: 630px) {
+  .botoRuta{
+    padding: 5px 20px;
+    font-size: 1em;
+  }
+  .crearRuta{
+    width: 50%;
+  }
+  .caixa{
+    width: 160px;
+
+  }
+  .caixa p{
+    font-size: 0.8em;
+  }
+  .botoSaber{
+    padding: 3px 20px;
+    font-size: 0.8em;
+  }
+
+}
+@media only screen and (max-width: 550px) {
+  .logo img{
+    max-height: 50px;
+  }
+  nav a{
+    font-size: 1.2em;
+  }
+  nav{
+    display: flex;
+    justify-content: flex-start;
+  }
+  nav ul{
+    margin: 0px;
+    padding: 0px;
+    font-size: 1em;
+  }
+  nav li{
+    margin: 0px;
+  }
+  .descargaApp p{
+    width: 200px;
+  }
+  .footer{
+    flex-direction: column; 
+  }
+  .box{
+    width: 80%;
+  }
+  .apuntat{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px 0px;
+  }
+  .caixa{
+    margin: 10px 0px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  nav{
+    width: 100%;
+  }
+  nav a{
+    font-size: 1em;
+  }
+
+  .logo img{
+    max-height: 30px;
+  }
+  .logo p{
+    font-size: 1.1em;
+    width: 200px;
+  }
+  .inici p{
+    margin: 0px;
+  }
+  .nomEmpresa img{
+    width: 45%;
+    height: 50%;
+  }
+}
+
+
