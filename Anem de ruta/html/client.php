@@ -77,6 +77,11 @@
                             <p>Segueixes <br> <?php echo $seguits; ?></p>
                         </div>
                     </div>
+                    <div class="botoSeguir botoEditar">
+                        <form class="editar" method="POST" action="editor.php" enctype="multipart/form-data"> 
+                            <input class="buttons" type="submit" name="seguir" id="seguir" value="Editar perfil">
+                        </form>
+                    </div> 
                 </div>
                 
                 <div class="crearRuta">

@@ -390,6 +390,10 @@ nav a:hover {
   background-color: grey;
   color: white;
 }
+.botoEditar input{
+  background-color: #426DA1 !important;
+  color: white;
+}
 .buscaUsuaris{
   color: black;
   font-size: 1.0em;
