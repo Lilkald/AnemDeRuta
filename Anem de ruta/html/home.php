@@ -21,7 +21,7 @@
         <title>Anem de Ruta</title>
         <script src="../js/code.js"></script>
     </head>
-    <header>
+    <header class="home">
         
         <div class="logo">
             <a href="index.php">

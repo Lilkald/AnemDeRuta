@@ -15,7 +15,7 @@ body {
 
 .login-container {
 	margin: 10% auto;
-	width: 400px;
+	width: 360px;
 	background-color: rgba(255, 255, 255, 0.9);
 	padding: 50px;
 	border-radius: 20px;
@@ -50,7 +50,7 @@ input {
 }
 
 .button {
-	background-color: #0C80FE;
+	background-color: #426DA1;
 	color: white;
 	padding: 14px 20px;
 	margin: 8px 0;
@@ -88,7 +88,7 @@ header {
 	justify-content: space-between;
 	align-items: center;
 	padding: 15px;
-	background-color: rgb(12, 128, 254);
+	background-color: #426DA1;
   }
   .logo{
 	display: flex;
@@ -135,4 +135,260 @@ header {
   
   nav a:hover {
 	color: #AFE3DE;
+  }
+
+
+  /*Footer*/
+  footer{
+	width: 100%;
+	display: flex;
+	background-color: #426DA1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+  }
+  footer a{
+	color: white;
+  }
+  
+  .footer{
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px;
+  }
+  .redes p{
+	color: white;
+  }
+  
+  .politica{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+  }
+  .politica a{
+	padding: 5px;
+  }
+  
+  .allright{
+	text-align: center;
+  }
+  .logo i{
+	font-size: 2.3em;
+	margin: 5px 10px 5px 0px;
+	color: white;
+	transition: 0.5s all;
+  }
+  .allright p{
+	color: white;
+  }
+  .logo i:hover{
+	color: black;
+  }
+
+  @media only screen and (max-width: 1400px) {
+	header {
+	  flex-direction: column;
+	}
+  }
+	
+  
+  @media only screen and (max-width: 1040px) {
+	nav{
+	  margin-top: 20px;
+	}
+  
+	.container{
+	  flex-direction: column;
+	  align-items: center;
+	}
+	.contactinfo{
+	  width: 80%;
+	}
+	#formulari{
+	  width: 80%;
+	}
+	.contactform h1{
+	  margin-left: 0px;
+	}
+	.containerText{
+	  display: flex;
+	  justify-content: center;
+	}
+	.inici{
+	  width: 80%;
+	}
+	.nomEmpresa{
+	  width: 100%;
+	}
+	.nomEmpresa img{
+	  width: 20%;
+	  height: 70%;
+	}
+	.login-container{
+		width: 40%;
+	}
+	
+  }
+  @media only screen and (max-width: 880px) {
+	.container2{
+	  flex-direction: column;
+	  align-items: center;
+	}
+	.box{
+	  width: 50%;
+	}
+	.usuari{
+	  margin: 0px;
+	}
+	.container1{
+	  background-size: cover;
+	}
+	.container3{
+	  flex-direction: column;
+	  
+	}
+	.registrate{
+	  margin-bottom: 50px;
+	}
+	.avion{
+	  width: 90%;
+	  height: 180px;
+	}
+	.avioneta{
+	  width: 90%;
+	  height: 180px;
+	  
+	}
+	.usuaris{
+	  flex-direction: column;
+	  align-items: center;
+	}
+	.usuari{
+	  width: 90%;
+	}
+	.rutesApuntat{
+	  width: 90%;
+	}
+	.formulariOrg{
+	  display: flex;
+	  flex-direction: column;
+	}
+	textarea{
+	  margin-left: 0px;
+	}
+	.enviar{
+	  margin: 30px 10px 10px 0px;
+	  width: 100px;
+	}
+	label{
+	  margin-left: 0px;
+	}
+	form{
+	  display: flex;
+	  flex-direction: column;
+	}
+	label{
+	  text-align: left;
+	}
+	input{
+	  width: 80%;
+	}
+	nav{
+	  flex-direction: column;
+	  justify-content: center;
+	  align-items: center;
+	}
+	.buscadorUL{
+	  padding: 10px 0px;
+	  margin: 0px;
+	}
+  }
+  @media only screen and (max-width: 630px) {
+	.botoRuta{
+	  padding: 5px 20px;
+	  font-size: 1em;
+	}
+	.crearRuta{
+	  width: 50%;
+	}
+	.caixa{
+	  width: 160px;
+  
+	}
+	.caixa p{
+	  font-size: 0.8em;
+	}
+	.botoSaber{
+	  padding: 3px 20px;
+	  font-size: 0.8em;
+	}
+	.login-container{
+		width: 60%;
+		padding: 30px;
+	}
+  }
+  @media only screen and (max-width: 550px) {
+	.logo img{
+	  max-height: 50px;
+	}
+	nav a{
+	  font-size: 1.2em;
+	}
+	nav{
+	  display: flex;
+	  justify-content: flex-start;
+	}
+	nav ul{
+	  margin: 0px;
+	  padding: 0px;
+	  font-size: 1em;
+	}
+	nav li{
+	  margin: 0px;
+	}
+	.descargaApp p{
+	  width: 200px;
+	}
+	.footer{
+	  flex-direction: column; 
+	}
+	.box{
+	  width: 80%;
+	}
+	.apuntat{
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: space-around;
+	  margin: 10px 0px;
+	}
+	.caixa{
+	  margin: 10px 0px;
+	}
+  }
+  
+  @media only screen and (max-width: 450px) {
+	nav{
+	  width: 100%;
+	}
+	nav a{
+	  font-size: 1em;
+	}
+  
+	.logo img{
+	  max-height: 30px;
+	}
+	.logo p{
+	  font-size: 1.1em;
+	  width: 200px;
+	}
+	.inici p{
+	  margin: 0px;
+	}
+	.nomEmpresa img{
+	  width: 45%;
+	  height: 50%;
+	}
   }

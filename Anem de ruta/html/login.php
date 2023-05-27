@@ -72,7 +72,7 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link href="../css/login.css" rel="stylesheet">
         <title>Login</title>
-        <script src="../../js/code.js"></script>
+        <script src="../js/code.js"></script>
 </head>
 <!--Header-->
 <header>
@@ -109,5 +109,25 @@
 		<p>No tens un compte? <a href="registre.php">Registra't</a></p>
 	</div>
 </body>
-
+<footer>
+        <div class="footer">
+            <div class="redes sect">
+                <p>SEGUEIX-NOS A:</p>
+                <div class="logo">
+                    <a href="https://www.instagram.com"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://www.twitter.com"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.facebook.com"><i class='bx bxl-facebook-circle'></i></a>
+                </div>
+            </div>
+            <div class="allright sect">
+                <p>&copy; AnemDeRuta. All rights reserved.</p>
+                <a href="#">Condicions d'ús</a> | <a href="#">Privadesa</a> | <a href="#">Política de cookies</a>
+            </div>
+            <div class="politica sect">
+                <a href="#">Política de privadesa</a>
+                <a href="#">Sobre nosaltres</a>
+                <a href="#">Les nostres tarifes</a>
+            </div>
+        </div>
+    </footer>
 </html>
