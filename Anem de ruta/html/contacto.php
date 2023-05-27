@@ -46,7 +46,7 @@ if (isset($_POST["enviar"])) {
             <img src="../images/anemderuta.png" alt="Logo de la página">
         </a>
         <a href="home.php">
-            <p>ANEM DE PUTES</p>
+            <p>ANEM DE RATES</p>
         </a>
 
     </div>
