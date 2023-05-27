@@ -82,7 +82,7 @@
                 <div class="crearRuta">
                     <h2>REGISTRE LA TEVA PRÒPIA RUTA, <?php echo $_SESSION['username']; ?></h2>
                     <div class="botoCrearRuta">
-                        <p>Crea la teva primera ruta i<br> comparteix-la per que la puguin<br> veure altres usuaris!</p>
+                        <p>Crea la teva ruta i<br> comparteix-la per que la puguin<br> veure altres usuaris!</p>
                         <a class="enlaceApp botoRuta" href="https://www.youtube.com/watch?v=b8FUR5Z2MDI">Crear ruta</a>
                     </div>
                 </div>
