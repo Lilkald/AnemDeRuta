@@ -389,16 +389,43 @@ nav a:hover {
 .botoSeguir input:hover{
   background-color: grey;
   color: white;
+  
 }
 .botoEditar input{
-  background-color: #426DA1 !important;
+  background-color: #426DA1;
   color: white;
+  text-align: center;
+  width: 50%;
 }
 
 .botoEditar input:hover{
   background-color: grey;
   color: white;
 }
+/*Editor d'usuaris*/
+.editorForm{
+  width: 100%;
+}
+.edicio{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.edicio input{
+  margin: 10px 0px;
+  font-size: 1.1em;
+}
+.edicio textarea{
+  font-size: 1.1em;
+  margin: 10px 0px;
+}
+.llarg input{
+  width: 100% !important;
+}
+
+
 
 .buscaUsuaris{
   color: black;

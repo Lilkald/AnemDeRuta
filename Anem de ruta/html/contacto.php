@@ -89,6 +89,7 @@ if (isset($_POST["enviar"])) {
                         <label for="missatge">Missatge</label>
                         <textarea id="missatge" required name="missatge"></textarea><br>
                         <button class="enviar button1" type="submit" name="enviar" value="Enviar">Enviar</button>
+                    </form>
                 </article>
             </article>
         </article>

@@ -6,6 +6,46 @@
         header("Location: login.php");
         exit();
     }
+    $username = $_SESSION['username'];
+    $sql = "SELECT * FROM usuaris WHERE usuari LIKE '$username'";
+        $result = $conn->query($sql);
+
+        if($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+            $id = $row["ID"];
+            $usuari = $row["usuari"];
+            $nom = $row["nom"];
+            $cognom = $row["cognom"];
+            $contrassenya = $row["contrassenya"];
+            $numRutes = $row["numRutes"];
+            $seguidors = $row["seguidors"];
+            $seguits = $row["seguits"];
+            $descripcio = $row["descripcio"];
+            }
+        }
+    if (isset($_POST["guardar"])) {
+            $nouNom = $_POST["nom"];
+            $nouCognom = $_POST["cognom"];
+            $nouDesc = $_POST["descripcio"];
+            $pass1 = $_POST["contrassenya"];
+            $pass2 = $_POST["contrassenya2"];
+
+            if($pass1 == $pass2){
+                $sql = "UPDATE usuaris SET nom='$nouNom', cognom= '$nouCognom', descripcio='$nouDesc', contrassenya='$pass1' WHERE ID LIKE '$id'";
+                mysqli_query($conn, $sql);
+            
+                if (mysqli_affected_rows($conn) == 1) {
+                    echo '<script language="javascript">alert("Canvis guardats");</script>';
+                    header('Location: client.php');
+                } else {
+                    echo '<script language="javascript">alert("Error al guardar els canvis");</script>';
+                }
+            }
+            else{
+                echo '<script language="javascript">alert("Error les contrassenyes no coincideixen");</script>';
+            }
+            
+        }
 
 ?>
 <!DOCTYPE html>
@@ -49,24 +89,27 @@
                     <div class="fotoUsuari">
                         <img src="../images/usuari.svg" alt="">
                     </div>
-                    <p>Usuari: <?php echo $nom; ?></p>
-                    <p>Descripcio: <br><?php echo $descripcio; ?></p>
-                    <div class="seguidors">
-                        <div class="seg">
-                            <p>Rutes <br> <?php echo $numRutes; ?></p>
-                        </div>
-                        <div class="seg">
-                            <p>Seguidors <br> <?php echo $seguidors; ?></p>
-                        </div>
-                        <div class="seg">
-                            <p>Segueix <br> <?php echo $seguits; ?></p>
-                        </div>
-                    </div>
-                    <div class="botoSeguir">
-                        <form class="registre" method="POST" action="usuari.php?usuari=<?php echo $valor?>" enctype="multipart/form-data"> 
-                            <input class="buttons" type="submit" name="seguir" id="seguir" value="<?php echo $textBoto?>">
+                    <div class="editorForm">
+                        <form method="POST" action="" enctype="multipart/form-data">
+                            <div class="edicio">
+                                <label for="nom">Nom:</label>
+                                <input type="text" id="nom" name="nom" required value="<?php echo $nom?>">
+                                <label for="cognom">Cognom:</label>
+                                <input type="text" id="cognom" name="cognom" required value="<?php echo $cognom?>">
+                                <label for="descripcio">Descripció:</label>
+                                <textarea type="text" id="descripcio" name="descripcio" required><?php echo $descripcio?></textarea>
+                                <label for="contrassenya">Contrassenya:</label>
+                                <input type="password" id="contrassenya" name="contrassenya" required value="<?php echo $contrassenya?>">
+                                <label for="contrassenya2">Confirma contrassenya:</label>
+                                <input type="password" id="contrassenya2" name="contrassenya2" required>
+                            </div>
+                            <br>
+                            <div class="botoSeguir botoEditar">
+                                <input class="buttons" type="submit" name="guardar" id="guardar" value="Guardar">
+                            </div> 
+                            <br>
                         </form>
-                    </div>  
+                    </div>
                 </div>
             </div>
         </nav>
