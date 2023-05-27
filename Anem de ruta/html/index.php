@@ -17,7 +17,7 @@
                 <img src="../images/anemderuta.png" alt="Logo de la página">
             </a>
             <a href="index.php">
-                <p>ANEM DE PUTES MARICAS</p>
+                <p>ANEM DE RUTA</p>
             </a>
             
         </div>
