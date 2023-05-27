@@ -82,7 +82,7 @@
                 <div class="crearRuta">
                     <h2>REGISTRE LA TEVA PRÒPIA RUTA, <?php echo $_SESSION['username']; ?></h2>
                     <div class="botoCrearRuta">
-                        <p>Crea la teva primera ruta i<br> comparteix-la per que la puguin<br> veure altres usuaris!</p>
+                        <p>Crea la teva ruta i<br> comparteix-la per que la puguin<br> veure altres usuaris!</p>
                         <a class="enlaceApp botoRuta" href="https://www.youtube.com/watch?v=b8FUR5Z2MDI">Crear ruta</a>
                     </div>
                 </div>
@@ -92,62 +92,7 @@
     <div class="containerMap" id="map">
         <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2986.1721557136198!2d2.096044914932535!3d41.54386959424358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a494f7a6b86651%3A0xe9a74531a2b7ca1!2sJaume%20Viladoms%2C%20Centre%20d&#39;Estudis%20Professionals!5e0!3m2!1sca!2ses!4v1635488846516!5m2!1sca!2ses" width="1000" height="550" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
-    <article class="rutesApuntado">
-        <h3><b>RUTES A LES QUE ESTAS APUNTAT</b></h3>
-        <div class="rutesApuntat">
-            <div class="apuntat">
-                <div class="caixa">
-                    <p>Localització: Dubai</p>
-                    <p>Tipus de ruta: senderisme</p>
-                    <a class="enlaceApp botoSaber" href="https://www.youtube.com/watch?v=b8FUR5Z2MDI">Saber més</a>
-                </div>
-                <div class="caixa">
-                    <p>Localització: Dubai</p>
-                    <p>Tipus de ruta: senderisme</p>
-                    <a class="enlaceApp botoSaber" href="https://www.youtube.com/watch?v=b8FUR5Z2MDI">Saber més</a>
-                </div>
-                <div class="caixa">
-                    <p>Localització: Dubai</p>
-                    <p>Tipus de ruta: senderisme</p>
-                    <a class="enlaceApp botoSaber" href="https://www.youtube.com/watch?v=b8FUR5Z2MDI">Saber més</a>
-                </div>
-            </div>
-            <div class="apuntat">
-                <div class="caixa">
-                    <p>Localització: Dubai</p>
-                    <p>Tipus de ruta: senderisme</p>
-                    <a class="enlaceApp botoSaber" href="https://www.youtube.com/watch?v=b8FUR5Z2MDI">Saber més</a>
-                </div>
-                <div class="caixa">
-                    <p>Localització: Dubai</p>
-                    <p>Tipus de ruta: senderisme</p>
-                    <a class="enlaceApp botoSaber" href="https://www.youtube.com/watch?v=b8FUR5Z2MDI">Saber més</a>
-                </div>
-                <div class="caixa">
-                    <p>Localització: Dubai</p>
-                    <p>Tipus de ruta: senderisme</p>
-                    <a class="enlaceApp botoSaber" href="https://www.youtube.com/watch?v=b8FUR5Z2MDI">Saber més</a>
-                </div>
-            </div>
-            <div class="apuntat">
-                <div class="caixa">
-                    <p>Localització: Dubai</p>
-                    <p>Tipus de ruta: senderisme</p>
-                    <a class="enlaceApp botoSaber" href="https://www.youtube.com/watch?v=b8FUR5Z2MDI">Saber més</a>
-                </div>
-                <div class="caixa">
-                    <p>Localització: Dubai</p>
-                    <p>Tipus de ruta: senderisme</p>
-                    <a class="enlaceApp botoSaber" href="https://www.youtube.com/watch?v=b8FUR5Z2MDI">Saber més</a>
-                </div>
-                <div class="caixa">
-                    <p>Localització: Dubai</p>
-                    <p>Tipus de ruta: senderisme</p>
-                    <a class="enlaceApp botoSaber" href="https://www.youtube.com/watch?v=b8FUR5Z2MDI">Saber més</a>
-                </div>
-            </div>
-        </div>
-    </article>
+
     <!--Footer-->
     <footer>
         <div class="footer">

@@ -76,6 +76,7 @@
             
             $sql3 = "UPDATE usuaris SET seguits = $nousSeguits WHERE usuari LIKE '$seguidorUsuari'";
             $resultado = mysqli_query($conn, $sql3);
+            header('Location: ' . $_SERVER['REQUEST_URI']);
         }
         else{
             
@@ -88,6 +89,7 @@
             $nousSeguidets = $numSeguidets-1;
             $sql3 = "UPDATE usuaris SET seguits = $nousSeguidets WHERE usuari LIKE '$seguidorUsuari'";
             $resultado = mysqli_query($conn, $sql3);
+            header('Location: ' . $_SERVER['REQUEST_URI']);
         }
         
     }
