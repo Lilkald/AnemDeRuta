@@ -69,6 +69,12 @@
                 <li><a href="contacte.php">Contacte</a></li>
                 <li><a href="logout.php">Log out</a></li>
             </ul>
+            <ul class="buscadorUL">
+                <li class="buscador">
+                    <input class="buscador" type="text" id="cerca" placeholder="Busca altres usuaris"/>
+                    <ul class="desplegable" id="resultados"></ul>
+                </li>
+            </ul>
         </nav>
     </header>
     <body class="contacteBody">
@@ -97,7 +103,7 @@
                                 <input type="number" id="telefon" name="telefon" required>
                             </div>
                         <br><br>
-                        <label for="missatge">Missatge</label>
+                        <label for="missatge">Missatge: </label>
                         <textarea id="missatge" required name="missatge"></textarea><br>
                         <button class="enviar button1" type="submit" name="enviar" value="Enviar">Enviar</button>
                     </article>

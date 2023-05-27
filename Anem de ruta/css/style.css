@@ -409,6 +409,53 @@ nav a:hover {
   background-color: grey;
   color: white;
 }
+
+/*POPUP*/
+.popup-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #eaeaea;
+  color: #333;
+  text-decoration: none;
+}
+
+.popup {
+  display: none;
+  width: 400px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.seguidor{
+  margin: 0px;
+  padding: 0px;
+  color: black;
+}
+.seguidorets{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.segui{
+  color: black;
+  font-size: 1em;
+  padding: 0px;
+  transition: all 0.5s;
+}
+.segui:hover{
+  color: #426DA1;
+}
+.tancar{
+  color: black;
+}
 /*Editor d'usuaris*/
 .editorForm{
   width: 100%;

@@ -13,6 +13,7 @@
 
         if($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
+            $id = $row["ID"];
             $username = $row["usuari"];
             $numRutes = $row["numRutes"];
             $seguidors = $row["seguidors"];
@@ -20,6 +21,7 @@
             $descripcio = $row["descripcio"];
             }
         }
+    
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -37,7 +39,6 @@
 
     <!--Header-->
     <header>
-        
         <div class="logo">
             <a href="home.php">
                 <img src="../images/anemderuta.png" alt="Logo de la página">
@@ -50,10 +51,16 @@
         </a>
         <nav>
             <ul>
-            <li><a href="home.php">Inici</a></li>
-            <li><a href="client.php">Les teves rutes</a></li>
-            <li><a href="contacte.php">Contacte</a></li>
-            <li><a href="logout.php">Log out</a></li>
+                <li><a href="home.php">Inici</a></li>
+                <li><a href="client.php">Les teves rutes</a></li>
+                <li><a href="contacte.php">Contacte</a></li>
+                <li><a href="logout.php">Log out</a></li>
+            </ul>
+            <ul class="buscadorUL">
+                <li class="buscador">
+                    <input class="buscador" type="text" id="cerca" placeholder="Busca altres usuaris"/>
+                    <ul class="desplegable" id="resultados"></ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -71,10 +78,58 @@
                             <p>Rutes Creades: <br><?php echo $numRutes; ?></p>
                         </div>
                         <div class="seg">
-                            <p>Seguidors <br> <?php echo $seguidors; ?></p>
+                            <p><a href="#" class="segui" onclick="togglePopup()">Seguidors <br> <?php echo $seguidors; ?></a></p>
+                        </div>
+                        <div id="popup" class="popup">
+                            <h2>Seguidors:</h2>
+                            <?php
+                                $sql = "SELECT * FROM seguidors WHERE id_seguit LIKE '$id'";
+                                $result = $conn->query($sql);
+                                if($result->num_rows > 0) {
+                                    while($row = $result->fetch_assoc()) {
+                                        $idSeg = $row["id_seguidor"];
+                                            $sql2 = "SELECT * FROM usuaris WHERE ID LIKE '$idSeg'";
+                                            $result2 = $conn->query($sql2);
+                                            if($result2->num_rows > 0) {
+                                                while($row2 = $result2->fetch_assoc()) {
+                                                    echo "<ul class='seguidorets'>";
+                                                    echo "<a href='usuari.php?usuari=".$row2['usuari']."' class='seguidor'><li>" .$row2['usuari'] ."</li></a>";
+                                                    echo "<br>";
+                                                    echo "</ul>";
+                                                    }
+                                                }
+                                        }
+                                    }
+                            ?>
+                            <br>
+                            <a href="#" class="tancar" onclick="togglePopup()">Cerrar</a>
                         </div>
                         <div class="seg">
-                            <p>Segueixes <br> <?php echo $seguits; ?></p>
+                        <p><a href="#" class="segui" onclick="togglePopup2()">Segueixes <br> <?php echo $seguits; ?></a></p>
+                        </div>
+                        <div id="popup2" class="popup">
+                            <h2>Segueixes:</h2>
+                            <?php
+                                $sql = "SELECT * FROM seguidors WHERE id_seguidor LIKE '$id'";
+                                $result = $conn->query($sql);
+                                if($result->num_rows > 0) {
+                                    while($row = $result->fetch_assoc()) {
+                                        $idSeg = $row["id_seguit"];
+                                            $sql2 = "SELECT * FROM usuaris WHERE ID LIKE '$idSeg'";
+                                            $result2 = $conn->query($sql2);
+                                            if($result2->num_rows > 0) {
+                                                while($row2 = $result2->fetch_assoc()) {
+                                                    echo "<ul class='seguidorets'>";
+                                                    echo "<a href='usuari.php?usuari=".$row2['usuari']."' class='seguidor'><li>" .$row2['usuari'] ."</li></a>";
+                                                    echo "<br>";
+                                                    echo "</ul>";
+                                                    }
+                                                }
+                                        }
+                                    }
+                            ?>
+                            <br>
+                            <a href="#" class="tancar" onclick="togglePopup2()">Cerrar</a>
                         </div>
                     </div>
                     <div class="botoSeguir botoEditar llarg">
@@ -83,7 +138,7 @@
                         </form>
                     </div> 
                 </div>
-                
+                <script src="../js/script.js"></script>
                 <div class="crearRuta">
                     <h2>REGISTRE LA TEVA PRÒPIA RUTA, <?php echo $_SESSION['username']; ?></h2>
                     <div class="botoCrearRuta">
@@ -122,3 +177,21 @@
     </footer>
 
 </html>
+
+<script>
+         $('#cerca').on('input', function() {
+              let paraula = $(this).val();
+              if(paraula.length >= 2) {
+                  $.ajax({
+                      method: 'post',
+                      url: 'Admin/buscador.php',
+                      data: { paraula: paraula },
+                      success: function(response) {
+                          $('#resultados').html(response);
+                      }
+                  });
+              } else {
+                  $('#resultados').html('');
+              }
+            });
+</script>

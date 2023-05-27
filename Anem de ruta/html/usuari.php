@@ -123,10 +123,16 @@
         </a>
         <nav>
             <ul>
-            <li><a href="home.php">Inici</a></li>
-            <li><a href="client.php">Les teves rutes</a></li>
-            <li><a href="contacte.php">Contacte</a></li>
-            <li><a href="logout.php">Log out</a></li>
+                <li><a href="home.php">Inici</a></li>
+                <li><a href="client.php">Les teves rutes</a></li>
+                <li><a href="contacte.php">Contacte</a></li>
+                <li><a href="logout.php">Log out</a></li>
+            </ul>
+            <ul class="buscadorUL">
+                <li class="buscador">
+                    <input class="buscador" type="text" id="cerca" placeholder="Busca altres usuaris"/>
+                    <ul class="desplegable" id="resultados"></ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -186,3 +192,20 @@
     </footer>
 
 </html>
+<script>
+         $('#cerca').on('input', function() {
+              let paraula = $(this).val();
+              if(paraula.length >= 2) {
+                  $.ajax({
+                      method: 'post',
+                      url: 'Admin/buscador.php',
+                      data: { paraula: paraula },
+                      success: function(response) {
+                          $('#resultados').html(response);
+                      }
+                  });
+              } else {
+                  $('#resultados').html('');
+              }
+            });
+</script>
