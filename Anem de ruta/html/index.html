@@ -124,7 +124,6 @@
           <option value="coche">Coche</option>
           <option value="moto">Moto</option>
           <option value="caminar">Caminar</option>
-          <option value="globo">Globo</option>
         </select>
         <br><br>
         <input type="submit" id="guardar-ruta" name="guardar-ruta">
@@ -272,6 +271,7 @@ map.on('draw:created', function (event) {
   }
     else if (type === 'polyline') {
     var latlngs = layer.getLatLngs();
+    var coordinadas = [];
     var startLatLng = latlngs[0];
     var endLatLng = latlngs[latlngs.length - 1];
     var startLat = startLatLng.lat;
@@ -332,7 +332,7 @@ $('#guardar-ruta').click(function() {
         };
     
     $.ajax({
-        url: '../php/guarda_rutes.php',
+        url: 'guarda_rutes.php',
         method: 'POST',
         data: dades,
         success: function(data, response) {

@@ -4,12 +4,14 @@
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet-src.min.js" integrity="sha512-nRcCZolw4mA+OKrTG/baePuVcG7PHhjFhl6pxkLYl2T+3pKEf+vXw0uR1/X3YtlPLXoWiaLjBnuUzpDuB1yXNg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>      <link rel="stylesheet" href="../leaflet/leaflet.css" />
     <script src="../leaflet/leaflet.js"></script>
+    
     <link href="../css/style.css" rel="stylesheet">
    <!-- Leaflet CSS -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 
 <!-- Leaflet JavaScript -->
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
 
 <!-- Leaflet.markercluster CSS -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
@@ -49,6 +51,18 @@
     <br>
     <div id="mapid" class="col" style="height: 500px; border: 5px solid black;"></div>
     <div class="su"></div>
+    <div>
+      <form onsubmit="return false;">
+      <label for="vehicle-select">Seleccione un vehículo:</label>
+      <select id="vehicles">
+        <option value="coche">Coche</option>
+        <option value="moto">Moto</option>
+        <option value="bici">Bicicleta</option>
+        <option value="caminar">Caminando</option>
+      </select>
+      <input  type="submit" class="filtrar" id="filtrar" value="filtrar">
+    </form>
+    </div>
     <input type="submit" class="tornar" id="tornar" value="tornar"></div>
     <br>
     <footer>
@@ -133,56 +147,164 @@ function onGeolocationError(error) {
 $.ajax({
  
 
-  url: '../php/localitzacions.php',
-  type: 'GET',
-  dataType: 'json',
-  success: function(data) {
-    // Recorrer las coordenadas y añadirlas a la capa de polilínea
-    data.forEach(function(coordenada) {
-        var inicioLatlng = L.latLng(coordenada.latitud_inicial, coordenada.longitud_inicial);
-        var finLatlng = L.latLng(coordenada.latitud_final, coordenada.longitud_final);
-        var rutaLayer = L.polyline([inicioLatlng, finLatlng], { color: 'green' }).addTo(map);
+ url: 'localitzacions.php',
+ type: 'GET',
+ dataType: 'json',
+ success: function(data) {
+   // Recorrer las coordenadas y añadirlas a la capa de polilínea
+   data.forEach(function(coordenada) {
+     
+       var inicioLatlng = L.latLng(coordenada.latitud_inicial, coordenada.longitud_inicial);
+       var finLatlng = L.latLng(coordenada.latitud_final, coordenada.longitud_final);
+       var rutaLayer = L.polyline([inicioLatlng, finLatlng], { color: 'green' }).addTo(map);
+      
+       var nombreRuta = coordenada.nombre; // Supongamos que el nombre de la ruta está en el campo "nombre" de la consulta
+       var tipus = coordenada.tipus;
+
+       var marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + 'Tipus de ruta:' + tipus);
+
+       if(tipus == 'coche'){
+         var marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP._kQs9G90A2XFKArTMH1SjAHaHa&pid=Api&P=0&h=180" width='50px'>`  );
+       }
+       else if(tipus == 'moto'){
+         var marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse2.mm.bing.net/th?id=OIP.GzB7SiVMJtmnqhwAujNJzgHaF_&pid=Api&P=0&h=180" width='50px'>`  );
+       }
+       else if(tipus == 'bici'){
+         var marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP.P1Htg_Cx-eaDwPdJ6o3oGwHaEw&pid=Api&P=0&h=180" width='50px'>`  );
+       }
+       else if(tipus == 'caminar'){
+         var marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP.OoNF_Weiw131JD7Q1rZSEQHaG6&pid=Api&P=0&h=180" width='50px'>`  );
+       }
+
        
-        var nombreRuta = coordenada.nombre; // Supongamos que el nombre de la ruta está en el campo "nombre" de la consulta
-        var tipus = coordenada.tipus;
 
-        var marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + 'Tipus de ruta:' + tipus);
-
-        if(tipus == 'coche'){
-          var marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP._kQs9G90A2XFKArTMH1SjAHaHa&pid=Api&P=0&h=180" width='50px'>`  );
-        }
-        else if(tipus == 'moto'){
-          var marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse2.mm.bing.net/th?id=OIP.GzB7SiVMJtmnqhwAujNJzgHaF_&pid=Api&P=0&h=180" width='50px'>`  );
-        }
-        else if(tipus == 'bici'){
-          var marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP.P1Htg_Cx-eaDwPdJ6o3oGwHaEw&pid=Api&P=0&h=180" width='50px'>`  );
-        }
-        else if(tipus == 'caminar'){
-          var marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP.OoNF_Weiw131JD7Q1rZSEQHaG6&pid=Api&P=0&h=180" width='50px'>`  );
-        }
-        else if(tipus == 'globo'){
-          var marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse3.mm.bing.net/th?id=OIP.u5MnfraxD57z5EAfQ5KM1AHaEQ&pid=Api&P=0&h=180" width='50px'>`  );
-        }
-        
-        if(markerClusterGroup.addLayer(marker)){
-          marker.removeFrom(map);
-        }else{
-          marker.addTo(map);
-        }
-        markerClusterGroup.addLayer(marker);
-  
-    });
-  },
-  error: function(xhr, status, error) {
-    console.error(error);
-  }
+   map.fitBounds(rutaLayer.getBounds());
+       
+       if(markerClusterGroup.addLayer(marker)){
+         marker.removeFrom(map);
+       }else{
+         marker.addTo(map);
+       }
+       markerClusterGroup.addLayer(marker);
+ 
+   });
+ },
+ error: function(xhr, status, error) {
+   console.log(error);
+ }
 });
+
 
 
 $('#tornar').on('click',function(){
     window.location.replace('index.html');
 
 });
+
+
+$('#filtrar').on('click', function() {
+  var filtro = document.getElementById('vehicles').value;
+  console.log(filtro);
+
+  // Limpiar los marcadores anteriores
+  markerClusterGroup.clearLayers();
+
+  if (filtro == 'coche') {
+    $.ajax({
+      url: 'localitzacions_coche.php',
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        // Recorrer las coordenadas y añadirlas a la capa de polilínea
+        data.forEach(function(coordenada) {
+          var inicioLatlng = L.latLng(coordenada.latitud_inicial, coordenada.longitud_inicial);
+          var finLatlng = L.latLng(coordenada.latitud_final, coordenada.longitud_final);
+          var rutaLayer = L.polyline([inicioLatlng, finLatlng], { color: 'green' }).addTo(map);
+
+          var nombreRuta = coordenada.nombre;
+          var tipus = coordenada.tipus;
+          var marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP._kQs9G90A2XFKArTMH1SjAHaHa&pid=Api&P=0&h=180" width='50px'>`);
+          marker.addTo(markerClusterGroup);
+          map.fitBounds(rutaLayer.getBounds());
+        });
+      },
+      error: function(xhr, status, error) {
+        console.log(error);
+      }
+    });
+  }else if(filtro == 'moto'){
+    $.ajax({
+      url: 'localitzacions_moto.php',
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        // Recorrer las coordenadas y añadirlas a la capa de polilínea
+        data.forEach(function(coordenada) {
+          var inicioLatlng = L.latLng(coordenada.latitud_inicial, coordenada.longitud_inicial);
+          var finLatlng = L.latLng(coordenada.latitud_final, coordenada.longitud_final);
+          var rutaLayer = L.polyline([inicioLatlng, finLatlng], { color: 'green' }).addTo(map);
+          var nombreRuta = coordenada.nombre;
+          var tipus = coordenada.tipus;
+          var marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse2.mm.bing.net/th?id=OIP.GzB7SiVMJtmnqhwAujNJzgHaF_&pid=Api&P=0&h=180" width='50px'>`);
+          marker.addTo(markerClusterGroup);
+          map.fitBounds(rutaLayer.getBounds());
+        });
+      },
+      error: function(xhr, status, error) {
+        console.log(error);
+      }
+    });
+  }else if(filtro == 'bici'){
+    $.ajax({
+      url: 'localitzacions_bici.php',
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        // Recorrer las coordenadas y añadirlas a la capa de polilínea
+        data.forEach(function(coordenada) {
+          var inicioLatlng = L.latLng(coordenada.latitud_inicial, coordenada.longitud_inicial);
+          var finLatlng = L.latLng(coordenada.latitud_final, coordenada.longitud_final);
+          var rutaLayer = L.polyline([inicioLatlng, finLatlng], { color: 'green' }).addTo(map);
+
+          var nombreRuta = coordenada.nombre;
+          var tipus = coordenada.tipus;
+          var marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP.P1Htg_Cx-eaDwPdJ6o3oGwHaEw&pid=Api&P=0&h=180" width='50px'>`);
+          marker.addTo(markerClusterGroup);
+          map.fitBounds(rutaLayer.getBounds());
+        });
+      },
+      error: function(xhr, status, error) {
+        console.log(error);
+      }
+    });
+  }
+  else if(filtro == 'caminar'){
+    $.ajax({
+      url: 'localitzacions_caminar.php',
+      type: 'GET',
+      dataType: 'json',
+      success: function(data) {
+        // Recorrer las coordenadas y añadirlas a la capa de polilínea
+        data.forEach(function(coordenada) {
+          var inicioLatlng = L.latLng(coordenada.latitud_inicial, coordenada.longitud_inicial);
+          var finLatlng = L.latLng(coordenada.latitud_final, coordenada.longitud_final);
+          var rutaLayer = L.polyline([inicioLatlng, finLatlng], { color: 'green' }).addTo(map);
+
+          var nombreRuta = coordenada.nombre;
+          var tipus = coordenada.tipus;
+          var marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP.OoNF_Weiw131JD7Q1rZSEQHaG6&pid=Api&P=0&h=180" width='50px'>`);
+          marker.addTo(markerClusterGroup);
+          map.fitBounds(rutaLayer.getBounds());
+        });
+      },
+      error: function(xhr, status, error) {
+        console.log(error);
+      }
+    });
+  }
+});
+
+
 
 
 
@@ -192,5 +314,5 @@ $('#tornar').on('click',function(){
 
 
 </script>
->>>>>>> 3e7cb7ce05a171a8fe418c30b1f2ec1651708298
+
 </html>
