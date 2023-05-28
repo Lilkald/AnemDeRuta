@@ -181,7 +181,10 @@
             </div>
         </nav>
     </body>
-    <div class="containerMap" id="map" style="height: 500px; width:90%; margin:auto; border: 5px solid black; margin: 50px 0px;">
+    <div class="mapet">
+        <div class="containerMap" id="map" style="height: 500px; width:90%; margin:auto; border: 5px solid black; margin: 50px 0px;">                            
+    </div>
+    
         <script>
              var map = L.map('map').setView([51.505, -0.09], 13);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

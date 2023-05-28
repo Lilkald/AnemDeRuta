@@ -574,7 +574,11 @@ nav a:hover {
 .rutesApuntado{
   width: 100%;
 }
-
+.mapet{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 .rutesApuntado{
   text-align: center;
