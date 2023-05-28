@@ -20,6 +20,7 @@
             $seguidors = $row["seguidors"];
             $seguits = $row["seguits"];
             $descripcio = $row["descripcio"];
+            
             }
         }
     
