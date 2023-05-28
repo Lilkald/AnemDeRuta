@@ -183,7 +183,7 @@
         </nav>
     </body>
     <div class="mapet">
-        <div class="containerMap" id="map" style="height: 500px; width:90%; margin:auto; border: 5px solid black; margin: 50px 0px;">                            
+        <div class="containerMap" id="map" style="height: 500px; width:90%; margin:auto; border: 5px solid black; margin: 50px 0px;"></div>                         
     </div>
     
         <script>

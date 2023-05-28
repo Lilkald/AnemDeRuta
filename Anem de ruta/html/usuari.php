@@ -178,7 +178,7 @@
                     <div class="fotoUsuari">
                         <img src="../images/usuari.svg" alt="">
                     </div>
-                    <p>Usuari: <?php echo $nom; ?></p>
+                    <p>Usuari: <?php echo $nom;?></p>
                     <p>Descripcio: <br><?php echo $descripcio; ?></p>
                     <div class="seguidors">
                         <div class="seg">
@@ -200,7 +200,9 @@
             </div>
         </nav>
     </body>
-    <div class="containerMap" id="map" style="height: 400px; width:1500px; margin:auto; border: 5px solid black;"></div>
+    <div class="mapet">
+        <div class="containerMap" id="map" style="height: 500px; width:90%; margin:auto; border: 5px solid black; margin: 50px 0px;"></div>                            
+    </div>
         <script>
              var map = L.map('map').setView([51.505, -0.09], 13);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
