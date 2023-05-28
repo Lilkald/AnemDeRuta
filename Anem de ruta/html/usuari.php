@@ -145,7 +145,7 @@
                     <div class="fotoUsuari">
                         <img src="../images/usuari.svg" alt="">
                     </div>
-                    <p>Usuari: <?php echo $nom; ?></p>
+                    <p>Usuari: <?php echo $nom;?></p>
                     <p>Descripcio: <br><?php echo $descripcio; ?></p>
                     <div class="seguidors">
                         <div class="seg">
