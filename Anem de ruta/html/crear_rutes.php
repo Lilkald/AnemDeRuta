@@ -99,7 +99,7 @@ include("conexio/conexio.php");
         <nav>
             <ul>
             <li><a href="home.php">Inici</a></li>
-            <li><a href="rutes.html">Les teves rutes</a></li>
+            <li><a href="client.php">Les teves rutes</a></li>
             <li><a href="contacte.php">Contacte</a></li>
             <li><a href="logout.php">Log out</a></li>
             </ul>
