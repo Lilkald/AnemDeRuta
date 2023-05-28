@@ -107,12 +107,15 @@ include("conexio/conexio.php");
     </header>
   <br>
   <form id="form-ruta" method="POST" onsubmit="return false;">
-    <h2>Vamos a crear una ruta!</h2>
+  <div class="pasos" style="text-align: center;">
+    <h2>Pas 1:</h2><br>
+    <p>Introdueix les dades corresponents, amic!</p>
+  </div>
         <label>Nom de la ruta:</label><br><br>
-        <input type="text" id="nombreRuta" name="nombreRuta" placeholder="Nombre de la ruta">
+        <input type="text" id="nombreRuta" name="nombreRuta" placeholder="Nombre de la ruta" required>
         <br><br>
         <label>Descripcio de la ruta:</label><br><br>
-        <textarea type="text" id="descripcio" name="descripcio"></textarea>
+        <textarea type="text" id="descripcio" name="descripcio" required></textarea>
         <br>
         <label>Dificultat de la ruta:</label><br><br>
         <div class="rating">
@@ -130,7 +133,7 @@ include("conexio/conexio.php");
         <br>
         <br>
         <label>Tipus de ruta:</label><br><br>
-        <select name="tipo_ruta" id="tipo_ruta">
+        <select name="tipo_ruta" id="tipo_ruta" required>
           <option value="bici">Bicicleta</option>
           <option value="coche">Coche</option>
           <option value="moto">Moto</option>
