@@ -17,13 +17,16 @@ $conn = new mysqli($servername, $username, $password, $dbname);
   $tipus = $_POST['tipus'];
   $user_id = $_POST['user_id'];
   $sql = "INSERT INTO rutas (latitud_inicial, latitud_final, longitud_inicial, longitud_final, nombre, dificultad, descripcio, tipus, user_id) VALUES ( '$latitud_inicial', '$latitud_final', '$longitud_inicial', '$longitud_final', '$nombre', '$dificultad','$descripcio', '$tipus', '$user_id')";
-  $resultado = $conn->query($sql);
+  $resultado = $conn->query($sql); 
+  $sql2 = "UPDATE usuaris SET numRutes = numRutes + 1 WHERE ID = $user_id";
+  $resultado = $conn->query($sql2);
   echo 'bien hecho';
   
 
 if (!$resultado) {
   echo "Error en la consulta: " . $conn->error;
 }
+
 
 $conn->close();
 
