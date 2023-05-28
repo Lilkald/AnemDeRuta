@@ -43,7 +43,7 @@
     <header>
         <div class="logo">
             <a href="home.php">
-                <img src="../images/anemderuta.png" alt="Logo de la página">
+                <img src="../images/anemderuta.png" alt="Logotip">
             </a>
             <a href="home.php">
                 <p>ANEM DE RUTA</p>
