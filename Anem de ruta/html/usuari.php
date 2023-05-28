@@ -307,17 +307,17 @@ function onGeolocationError(error) {
 
   var nombreRuta = coordenada.nombre;
   var tipus = coordenada.tipus;
-
+  var idRuta = coordenada.id_ruta;
   var marker;
 
   if (tipus == 'coche') {
-    marker = L.marker(inicioLatlng).bindPopup('<h3>' + nombreRuta + '</h3>' + '<br>' + '<br>' + '<h5>Tipus de ruta:</h5><br>' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP._kQs9G90A2XFKArTMH1SjAHaHa&pid=Api&P=0&h=180" width='50px'>`);
+    marker = L.marker(inicioLatlng).bindPopup('<h3>' + nombreRuta + '</h3>' + '<br>' + '<h5>Tipus de ruta:</h5>' + ' Cotxe' + '<br><br>' + `<img src="../images/tipo4.png" width='50px'>` + `<br><br><a href='ruta.php?ruta=`+ idRuta + `' class='buscaUsuaris'>Veure més...</a>`);
   } else if (tipus == 'moto') {
-    marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse2.mm.bing.net/th?id=OIP.GzB7SiVMJtmnqhwAujNJzgHaF_&pid=Api&P=0&h=180" width='50px'>`);
+    marker = L.marker(inicioLatlng).bindPopup('<h3>' + nombreRuta + '</h3>' + '<br>' + '<h5>Tipus de ruta:</h5>' + ' Moto' + '<br><br>' + `<img src="../images/tipo3.png" width='50px'>`  + `<br><br><a href='ruta.php?ruta=`+ idRuta + `' class='buscaUsuaris'>Veure més...</a>`);
   } else if (tipus == 'bici') {
-    marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP.P1Htg_Cx-eaDwPdJ6o3oGwHaEw&pid=Api&P=0&h=180" width='50px'>`);
+    marker = L.marker(inicioLatlng).bindPopup('<h3>' + nombreRuta + '</h3>' + '<br>' + '<h5>Tipus de ruta:</h5>' + ' Bici' + '<br><br>' + `<img src="../images/tipo2.png" width='50px'>`  + `<br><br><a href='ruta.php?ruta=`+ idRuta + `' class='buscaUsuaris'>Veure més...</a>`);
   } else if (tipus == 'caminar') {
-    marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP.OoNF_Weiw131JD7Q1rZSEQHaG6&pid=Api&P=0&h=180" width='50px'>`);
+    marker = L.marker(inicioLatlng).bindPopup('<h3>' + nombreRuta + '</h3>' + '<br>' + '<h5>Tipus de ruta:</h5>' + ' Caminant' + '<br><br>' + `<img src="../images/tipo1.png" width='50px'>`  + `<br><br><a href='ruta.php?ruta=`+ idRuta + `' class='buscaUsuaris'>Veure més...</a>`);
   }
 
   rutaLayer.bindPopup(marker);

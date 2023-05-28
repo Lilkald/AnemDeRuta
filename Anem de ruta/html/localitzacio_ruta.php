@@ -2,15 +2,13 @@
 
 $conn = new mysqli('localhost', 'root', '', 'anemderuta');
 
-$user_id = $_POST['user_id'];
-
-// Verifica la conexión
+$ruta_id = $_POST['ruta_id'];
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
 
 
-$sql = "SELECT * FROM rutas WHERE user_id LIKE $user_id";
+$sql = "SELECT * FROM rutas WHERE id LIKE '$ruta_id'";
 $result = $conn->query($sql);
 
 

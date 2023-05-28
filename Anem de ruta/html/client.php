@@ -33,10 +33,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="shortcut icon" href="../images/logo.png">
         <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+        <link href="../css/style.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet-src.min.js" integrity="sha512-nRcCZolw4mA+OKrTG/baePuVcG7PHhjFhl6pxkLYl2T+3pKEf+vXw0uR1/X3YtlPLXoWiaLjBnuUzpDuB1yXNg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>      <link rel="stylesheet" href="../leaflet/leaflet.css" />
         <script src="../leaflet/leaflet.js"></script>
-        <link href="../css/style.css" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
@@ -48,25 +48,8 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link href="../css/style.css" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet-src.min.js" integrity="sha512-nRcCZolw4mA+OKrTG/baePuVcG7PHhjFhl6pxkLYl2T+3pKEf+vXw0uR1/X3YtlPLXoWiaLjBnuUzpDuB1yXNg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>      <link rel="stylesheet" href="../leaflet/leaflet.css" />
-        <script src="../leaflet/leaflet.js"></script>
-        <link href="../css/style.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
-        <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
-                <!-- Leaflet.markercluster CSS -->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
-        <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
-
-        <!-- Leaflet.markercluster JavaScript -->
-        <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js "></script>
         <title>Anem de Ruta</title>
-       
         <script src="../js/code.js"></script>
     </head>
 
@@ -243,18 +226,20 @@ function onGeolocationError(error) {
 
   var nombreRuta = coordenada.nombre;
   var tipus = coordenada.tipus;
+  var idRuta = coordenada.id_ruta;
 
   var marker;
 
   if (tipus == 'coche') {
-    marker = L.marker(inicioLatlng).bindPopup('<h3>' + nombreRuta + '</h3>' + '<br>' + '<br>' + '<h5>Tipus de ruta:</h5><br>' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP._kQs9G90A2XFKArTMH1SjAHaHa&pid=Api&P=0&h=180" width='50px'>`);
+    marker = L.marker(inicioLatlng).bindPopup('<h3>' + nombreRuta + '</h3>' + '<br>' + '<h5>Tipus de ruta:</h5>' + ' Cotxe' + '<br><br>' + `<img src="../images/tipo4.png" width='50px'>` + `<br><br><a href='ruta.php?ruta=`+ idRuta + `' class='buscaUsuaris'>Veure més...</a>`);
   } else if (tipus == 'moto') {
-    marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse2.mm.bing.net/th?id=OIP.GzB7SiVMJtmnqhwAujNJzgHaF_&pid=Api&P=0&h=180" width='50px'>`);
+    marker = L.marker(inicioLatlng).bindPopup('<h3>' + nombreRuta + '</h3>' + '<br>' + '<h5>Tipus de ruta:</h5>' + ' Moto' + '<br><br>' + `<img src="../images/tipo3.png" width='50px'>`  + `<br><br><a href='ruta.php?ruta=`+ idRuta + `' class='buscaUsuaris'>Veure més...</a>`);
   } else if (tipus == 'bici') {
-    marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP.P1Htg_Cx-eaDwPdJ6o3oGwHaEw&pid=Api&P=0&h=180" width='50px'>`);
+    marker = L.marker(inicioLatlng).bindPopup('<h3>' + nombreRuta + '</h3>' + '<br>' + '<h5>Tipus de ruta:</h5>' + ' Bici' + '<br><br>' + `<img src="../images/tipo2.png" width='50px'>`  + `<br><br><a href='ruta.php?ruta=`+ idRuta + `' class='buscaUsuaris'>Veure més...</a>`);
   } else if (tipus == 'caminar') {
-    marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP.OoNF_Weiw131JD7Q1rZSEQHaG6&pid=Api&P=0&h=180" width='50px'>`);
+    marker = L.marker(inicioLatlng).bindPopup('<h3>' + nombreRuta + '</h3>' + '<br>' + '<h5>Tipus de ruta:</h5>' + ' Caminant' + '<br><br>' + `<img src="../images/tipo1.png" width='50px'>`  + `<br><br><a href='ruta.php?ruta=`+ idRuta + `' class='buscaUsuaris'>Veure més...</a>`);
   }
+  
 
   rutaLayer.bindPopup(marker);
   marker.addTo(markerClusterGroup);
@@ -287,7 +272,7 @@ markerClusterGroup.addTo(map);
     <footer>
         <div class="footer">
             <div class="redes sect">
-                <p>SIGUENOS EN:</p>
+                <p>SEGUEIX-NOS A:</p>
                 <div class="logo">
                     <a href="https://www.instagram.com"><i class='bx bxl-instagram'></i></a>
                     <a href="https://www.twitter.com"><i class='bx bxl-twitter'></i></a>
@@ -295,13 +280,13 @@ markerClusterGroup.addTo(map);
                 </div>
             </div>
             <div class="allright sect">
-                <p>&copy; NosVamosDeRuta. All rights reserved.</p>
-                <a href="">Condiciones de uso</a> | <a href="">Privacidad</a> | <a href="">Política de cookies</a>
+                <p>&copy; AnemDeRuta. All rights reserved.</p>
+                <a href="#">Condicions d'ús</a> | <a href="#">Privadesa</a> | <a href="#">Política de cookies</a>
             </div>
             <div class="politica sect">
-                <a href="">Política de privacidad</a>
-                <a href="">Sobre nosotros</a>
-                <a href="">Nuestras Tarifas</a>
+                <a href="#">Política de privadesa</a>
+                <a href="#">Sobre nosaltres</a>
+                <a href="#">Les nostres tarifes</a>
             </div>
         </div>
     </footer>

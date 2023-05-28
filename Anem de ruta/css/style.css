@@ -867,7 +867,21 @@ color: #ffca08;
 .dadesRuta form select{
   margin: 20px 0px;
 }
-
+.containerMapardo{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.textMap{
+  width: 90%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 50px;
+}
 
 /*----------------------------------------Footer----------------------------------------*/
 footer{

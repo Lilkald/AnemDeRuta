@@ -17,7 +17,7 @@ include('../conexio/conexio.php');
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="shortcut icon" href="../images/logo.png">
+        <link rel="shortcut icon" href="../../images/logo.png">
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link href="../../css/admin.css" rel="stylesheet">
         <title>Anem de Ruta</title>
@@ -45,8 +45,98 @@ include('../conexio/conexio.php');
                 </ul>
             </nav>
         </div>
-        <div class="container">
+        <div class="containerContingut">
+            <h1>Rutes creades: </h1>
+            <form action="contingut.php" method="POST" enctype="multipart/form-data">
+                    <label for="buscador">Buscador: </label>
+                    <input type="text" name="buscador" placeholder="Ruta">
+                    <input type="submit" name="submit_buscar" id="submit" class="mt-2" value="Buscar"/>
+                    <br>
+                </form>
+            <?php
+                if(!isset($_POST['submit_buscar'])){
+                        $sql = "SELECT * FROM rutas";
+                        $resultado = mysqli_query($conn, $sql);
+                        while ($fila = mysqli_fetch_assoc($resultado)) {
+                            $cuentas[] = $fila;
+                        }
+                        echo "
+                        <table class='taula'>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nom</th>
+                                    <th>Dificultat</th>
+                                    <th>Descripció</th>
+                                    <th>ID Usuari</th>
+                                    <th>Data de creació</th>
+                                    <th>Tipus</th>
+                                </tr>
+                            </thead>
+                            ";
+                            if (mysqli_num_rows($resultado) == 0) {
+                                echo "<td colspan='4' class='text-center'>Sin resultados</td>";
+                            } else {
+                                for ($i = 0; $i < sizeOf($cuentas); $i++) {
+                                    echo '
+                                <tbody>
+                                    <tr>
+                                        <td>' . $cuentas[$i]["id"] . '</td>
+                                        <td>' . $cuentas[$i]["nombre"] . '</td>
+                                        <td>' . $cuentas[$i]["dificultad"] . '</td>
+                                        <td>' . $cuentas[$i]["descripcio"] . '</td>
+                                        <td>' . $cuentas[$i]["user_id"] . '</td>
+                                        <td>' . $cuentas[$i]["created_date"] . '</td>
+                                        <td>' . $cuentas[$i]["tipus"] . '</td>
+                                    </tr>
+                            </tbody>';
+                                }
+                            }
+                            echo '</table>';
+                    }
 
+                    if(isset($_POST['submit_buscar'])){
+                        $buscador = $_POST['buscador']; 
+                        $sql = "SELECT * FROM rutas WHERE nombre LIKE '%$buscador%' OR descripcio LIKE '%$buscador%'";    
+                        $resultado = mysqli_query($conn, $sql);
+                        while ($fila = mysqli_fetch_assoc($resultado)) {
+                            $cuentas[] = $fila;
+                        }
+                        echo '
+                            <table class="taula">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nom</th>
+                                    <th>Dificultat</th>
+                                    <th>Descripció</th>
+                                    <th>ID Usuari</th>
+                                    <th>Data de creació</th>
+                                    <th>Tipus</th>
+                                </tr>
+                                </thead>
+                            <tbody>';
+
+                            if (mysqli_num_rows($resultado) == 0) {
+                                echo "<td colspan='4' class='text-center'>Sin resultados</td>";
+                            } else {
+                                for ($i = 0; $i < sizeOf($cuentas); $i++) {
+                                    echo '
+                                    <tr>
+                                        <td>' . $cuentas[$i]["id"] . '</td>
+                                        <td>' . $cuentas[$i]["nombre"] . '</td>
+                                        <td>' . $cuentas[$i]["dificultad"] . '</td>
+                                        <td>' . $cuentas[$i]["descripcio"] . '</td>
+                                        <td>' . $cuentas[$i]["user_id"] . '</td>
+                                        <td>' . $cuentas[$i]["created_date"] . '</td>
+                                        <td>' . $cuentas[$i]["tipus"] . '</td>
+                                    </tr>
+                                </tbody>';
+                                }
+                            echo '</table>';
+                            }
+                    }
+                ?>
         </div>
     </body>
 </html>

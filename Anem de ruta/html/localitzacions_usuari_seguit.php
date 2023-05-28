@@ -23,6 +23,7 @@ if ($result->num_rows > 0) {
     $coordenadas = array();
     while ($row = $result->fetch_assoc()) {
         $coordenadas[] = array(
+            'id_ruta' => $row['id'],
             'latitud_inicial' => $row['latitud_inicial'],
             'latitud_final' => $row['latitud_final'],
             'longitud_inicial' => $row['longitud_inicial'],
