@@ -237,7 +237,6 @@ function onGeolocationError(error) {
  dataType: 'json',
  data: dades,
  success: function(data) {
-   // Recorrer las coordenadas y añadirlas a la capa de polilínea
    data.forEach(function(coordenada) {
     var inicioLatlng = L.latLng(coordenada.latitud_inicial, coordenada.longitud_inicial);
   var finLatlng = L.latLng(coordenada.latitud_final, coordenada.longitud_final);
@@ -258,8 +257,8 @@ function onGeolocationError(error) {
     marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP.OoNF_Weiw131JD7Q1rZSEQHaG6&pid=Api&P=0&h=180" width='50px'>`);
   }
 
-  rutaLayer.bindPopup(marker); // Asociar el marcador a la capa de polilínea
-  marker.addTo(markerClusterGroup); // Agregar el marcador al grupo de clúster
+  rutaLayer.bindPopup(marker);
+  marker.addTo(markerClusterGroup);
 
 
 markerClusterGroup.addTo(map);
@@ -268,7 +267,7 @@ markerClusterGroup.addTo(map);
    map.fitBounds(rutaLayer.getBounds());
        
        if(markerClusterGroup.addLayer(marker)){
-         marker.removeFrom(map);
+         
        }else{
          marker.addTo(map);
        }
