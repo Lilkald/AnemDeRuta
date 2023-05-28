@@ -63,7 +63,7 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
 
         <!-- Leaflet.markercluster JavaScript -->
-        <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+        <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js "></script>
         <title>Anem de Ruta</title>
        
         <script src="../js/code.js"></script>
