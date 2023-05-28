@@ -232,7 +232,6 @@ function onGeolocationError(error) {
  dataType: 'json',
  data: dades,
  success: function(data) {
-   // Recorrer las coordenadas y añadirlas a la capa de polilínea
    data.forEach(function(coordenada) {
     var inicioLatlng = L.latLng(coordenada.latitud_inicial, coordenada.longitud_inicial);
   var finLatlng = L.latLng(coordenada.latitud_final, coordenada.longitud_final);
@@ -263,7 +262,7 @@ markerClusterGroup.addTo(map);
    map.fitBounds(rutaLayer.getBounds());
        
        if(markerClusterGroup.addLayer(marker)){
-         marker.removeFrom(map);
+         
        }else{
          marker.addTo(map);
        }
