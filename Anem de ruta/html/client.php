@@ -247,7 +247,7 @@ function onGeolocationError(error) {
   var marker;
 
   if (tipus == 'coche') {
-    marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP._kQs9G90A2XFKArTMH1SjAHaHa&pid=Api&P=0&h=180" width='50px'>`);
+    marker = L.marker(inicioLatlng).bindPopup('<h3>' + nombreRuta + '</h3>' + '<br>' + '<br>' + '<h5>Tipus de ruta:</h5><br>' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP._kQs9G90A2XFKArTMH1SjAHaHa&pid=Api&P=0&h=180" width='50px'>`);
   } else if (tipus == 'moto') {
     marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse2.mm.bing.net/th?id=OIP.GzB7SiVMJtmnqhwAujNJzgHaF_&pid=Api&P=0&h=180" width='50px'>`);
   } else if (tipus == 'bici') {
