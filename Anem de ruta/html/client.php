@@ -181,7 +181,7 @@
             </div>
         </nav>
     </body>
-    <div class="containerMap" id="map" style="height: 400px; width:1500px; margin:auto; border: 5px solid black;">
+    <div class="containerMap" id="map" style="height: 500px; width:90%; margin:auto; border: 5px solid black; margin: 50px 0px;">
         <script>
              var map = L.map('map').setView([51.505, -0.09], 13);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -201,19 +201,16 @@ const geocoderControl = L.Control.geocoder({
 function onGeolocationSuccess(position) {
       var lat = position.coords.latitude;
       var lon = position.coords.longitude;
-
-
-      // Set the map view to the current location
       map.setView([lat, lon], 13);
 }
 
-// Function to handle geolocation error
+
 function onGeolocationError(error) {
       console.error(error.message);
     }
 
     if ('geolocation' in navigator) {
-      // Get the current position
+
       navigator.geolocation.getCurrentPosition(onGeolocationSuccess, onGeolocationError);
     } else {
       console.error('Geolocation is not supported by your browser.');
@@ -222,16 +219,14 @@ function onGeolocationError(error) {
     var polylineLayer = L.polyline([], { color: 'green' }).addTo(map);
     var markerClusterGroup = L.markerClusterGroup();
 
-// Agrega el clúster de marcadores al mapa
+
     map.addLayer(markerClusterGroup);
     var user_id = "<?php echo $usuari_id; ?>";
-    console.log(user_id);
     var dades = {
         user_id: user_id,
         };
     $.ajax({
  
-
  url: 'localitzacions_usuari.php',
  type: 'POST',
  dataType: 'json',
@@ -258,8 +253,8 @@ function onGeolocationError(error) {
     marker = L.marker(inicioLatlng).bindPopup('Nom de la ruta:' + nombreRuta + '<br>' + '<br>' + 'Tipus de ruta:' + tipus + '<br><br>' + `<img src="https://tse1.mm.bing.net/th?id=OIP.OoNF_Weiw131JD7Q1rZSEQHaG6&pid=Api&P=0&h=180" width='50px'>`);
   }
 
-  rutaLayer.bindPopup(marker); // Asociar el marcador a la capa de polilínea
-  marker.addTo(markerClusterGroup); // Agregar el marcador al grupo de clúster
+  rutaLayer.bindPopup(marker);
+  marker.addTo(markerClusterGroup);
 
 
 markerClusterGroup.addTo(map);
@@ -307,7 +302,6 @@ markerClusterGroup.addTo(map);
             </div>
         </div>
     </footer>
-
 </html>
 
 <script>
