@@ -15,7 +15,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
   $longitud_inicial = $_POST['longitud_inicial'];
   $longitud_final = $_POST['longitud_final'];
   $tipus = $_POST['tipus'];
-  $sql = "INSERT INTO rutas (latitud_inicial, latitud_final, longitud_inicial, longitud_final, nombre, dificultad, descripcio, tipus) VALUES ( '$latitud_inicial', '$latitud_final', '$longitud_inicial', '$longitud_final', '$nombre', '$dificultad','$descripcio', '$tipus')";
+  $user_id = $_POST['user_id'];
+  $sql = "INSERT INTO rutas (latitud_inicial, latitud_final, longitud_inicial, longitud_final, nombre, dificultad, descripcio, tipus, user_id) VALUES ( '$latitud_inicial', '$latitud_final', '$longitud_inicial', '$longitud_final', '$nombre', '$dificultad','$descripcio', '$tipus', '$user_id')";
   $resultado = $conn->query($sql);
   echo 'bien hecho';
   

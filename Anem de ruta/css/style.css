@@ -32,6 +32,20 @@ header {
 .home{
   background-color: rgb(12, 128, 254);
 }
+
+
+.filtres{
+  width: 400px;
+  margin: auto;
+  display: flex;
+  height: auto;
+  padding:24px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 100px;
+  border: 1px solid black;
+}
 .logo{
   display: flex;
   justify-content: space-around;
@@ -139,6 +153,17 @@ nav a:hover {
   background-size: cover;
   background-repeat: none;
 
+}
+
+.tornar{
+  padding: 10px 40px;
+  background-color: rgb(12, 128, 254);
+  border-radius: 10px;
+  transition: 0.5s all;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  width: auto;
 }
 .mapa{
   width: 90%;
@@ -301,6 +326,7 @@ nav a:hover {
   justify-content: center;
   align-items: center;
 }
+
 
 .container3{
   width: 80%;
