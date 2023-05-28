@@ -550,7 +550,7 @@ nav a:hover {
 }
 .botoRuta{
   margin: 0px;
-  width: 100px;
+  width: 50%;
 }
 .fotoUsuari{
   width: 100%;
@@ -574,7 +574,11 @@ nav a:hover {
 .rutesApuntado{
   width: 100%;
 }
-
+.mapet{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 .rutesApuntado{
   text-align: center;
