@@ -6,5 +6,5 @@ function togglePopup() {
 
 function togglePopup2() {
     var popup = document.getElementById('popup2');
-    popup.style.display = (popup.style.display === 'none') ? 'block' : 'none';
+    popup.style.display = (popup.style.display === 'none') ? 'block' : 'none'; 
 }
