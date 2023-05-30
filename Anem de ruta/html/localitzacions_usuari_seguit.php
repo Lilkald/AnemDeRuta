@@ -4,7 +4,7 @@ $conn = new mysqli('localhost', 'root', '', 'anemderuta');
 
 $id_seguidor = $_POST['id_seguidor'];
 
-// Verifica la conexión
+
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
@@ -33,15 +33,14 @@ if ($result->num_rows > 0) {
         );
     }
 
-    // Imprime el resultado como JSON
     header('Content-Type: application/json');
-    ob_clean(); // Limpia cualquier salida en búfer
+    ob_clean(); 
     echo json_encode($coordenadas);
 } else {
     echo "No se encontraron resultados.";
 }
 
-// Cierra la conexión a la base de datos
+
 $conn->close();
 
 ?>
